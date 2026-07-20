@@ -1,0 +1,58 @@
+[
+  {
+    "url": "https://www.googletagmanager.com/gtag/js?id=partner.G-2X30ZRBDSG&cx=c&gtm=4e6781",
+    "type": "text/javascript"
+  },
+  {
+    "url": "https://www.googletagmanager.com/gtm.js?id=GTM-MBRHNDG7",
+    "type": ""
+  },
+  {
+    "url": "https://www.gstatic.com/recaptcha/releases/rL1ELiQAg1kPezz6_H9hTZ_i/recaptcha__en.js",
+    "type": "text/javascript"
+  },
+  {
+    "url": "https://cdn.qwiklabs.com/assets/hallofmirrors/polyfills/webcomponents-loader-2e147cb1679d97581f981243bfc2d1c03dc34a58.js",
+    "type": ""
+  },
+  {
+    "url": "https://cdn.qwiklabs.com/assets/head_scripts-78121e337319c81329ed63eb61196ea57f74a57d.js",
+    "type": ""
+  },
+  {
+    "url": "https://cdn.qwiklabs.com/assets/vendor-1c75122c864db561eb016ef97dbd4eb4a740856f.js",
+    "type": ""
+  },
+  {
+    "url": "https://cdn.qwiklabs.com/assets/application-4f28a3e4abea3562530c52c97c77c0fa2bbf3b06.js",
+    "type": ""
+  },
+  {
+    "url": "https://www.gstatic.com/charts/loader.js",
+    "type": ""
+  },
+  {
+    "url": "https://cdn.qwiklabs.com/assets/hallofmirrors/hallofmirrors-8cc991c80f4ed8f5132ca5a6740085c6b7fd965a.js",
+    "type": ""
+  },
+  {
+    "url": "https://www.gstatic.com/feedback/js/help/prod/service/lazy.min.js",
+    "type": ""
+  },
+  {
+    "url": "https://cdn.qwiklabs.com/nk_components/1.1.42/index.js",
+    "type": ""
+  },
+  {
+    "url": "https://support.google.com/inapp/api.js",
+    "type": ""
+  },
+  {
+    "url": "https://www.recaptcha.net/recaptcha/api.js?render=6LeVI8IUAAAAAJNdox5eTkYrw9SbvhZ1TFyv3iHr",
+    "type": ""
+  },
+  {
+    "url": "https://www.gstatic.com/glue/cookienotificationbar/cookienotificationbar.min.js",
+    "type": ""
+  }
+]

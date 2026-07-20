@@ -1,0 +1,10 @@
+[
+  {
+    "url": "https://www.recaptcha.net/recaptcha/api2/anchor?ar=1&k=6LeVI8IUAAAAAJNdox5eTkYrw9SbvhZ1TFyv3iHr&co=aHR0cHM6Ly9wYXJ0bmVyLnNraWxscy5nb29nbGU6NDQz&hl=en&v=rL1ELiQAg1kPezz6_H9hTZ_i&size=normal&anchor-ms=20000&execute-ms=30000&cb=ksd44s30q99c",
+    "title": "reCAPTCHA"
+  },
+  {
+    "url": "https://www.recaptcha.net/recaptcha/api2/anchor?ar=1&k=6LeVI8IUAAAAAJNdox5eTkYrw9SbvhZ1TFyv3iHr&co=aHR0cHM6Ly9wYXJ0bmVyLnNraWxscy5nb29nbGU6NDQz&hl=en&v=rL1ELiQAg1kPezz6_H9hTZ_i&size=invisible&anchor-ms=20000&execute-ms=30000&cb=vc3lbdhyrle1",
+    "title": "reCAPTCHA"
+  }
+]

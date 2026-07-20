@@ -1,0 +1,194 @@
+[
+  {
+    "level": "h4",
+    "text": "Checkpoints"
+  },
+  {
+    "level": "h1",
+    "text": "A Tour of Google Cloud Hands-on Labs"
+  },
+  {
+    "level": "h2",
+    "text": "GSP282"
+  },
+  {
+    "level": "h2",
+    "text": "Overview"
+  },
+  {
+    "level": "h3",
+    "text": "Objectives"
+  },
+  {
+    "level": "h3",
+    "text": "Prerequisites"
+  },
+  {
+    "level": "h2",
+    "text": "Lab fundamentals"
+  },
+  {
+    "level": "h3",
+    "text": "Features and components"
+  },
+  {
+    "level": "h4",
+    "text": "Start Lab (button)"
+  },
+  {
+    "level": "h4",
+    "text": "Credit"
+  },
+  {
+    "level": "h4",
+    "text": "Time"
+  },
+  {
+    "level": "h4",
+    "text": "Score"
+  },
+  {
+    "level": "h3",
+    "text": "Paying for a lab"
+  },
+  {
+    "level": "h3",
+    "text": "Reading and following instructions"
+  },
+  {
+    "level": "h3",
+    "text": "Test your understanding"
+  },
+  {
+    "level": "h2",
+    "text": "Task 1. Access the Cloud console"
+  },
+  {
+    "level": "h3",
+    "text": "Start the lab"
+  },
+  {
+    "level": "h3",
+    "text": "Lab details pane"
+  },
+  {
+    "level": "h4",
+    "text": "Open Google Cloud console"
+  },
+  {
+    "level": "h4",
+    "text": "Username and Password"
+  },
+  {
+    "level": "h4",
+    "text": "Project ID"
+  },
+  {
+    "level": "h3",
+    "text": "Sign in to Google Cloud"
+  },
+  {
+    "level": "h3",
+    "text": "Test your understanding"
+  },
+  {
+    "level": "h2",
+    "text": "Task 2. View projects in the Cloud console"
+  },
+  {
+    "level": "h3",
+    "text": "View all projects"
+  },
+  {
+    "level": "h3",
+    "text": "Test your understanding"
+  },
+  {
+    "level": "h3",
+    "text": "Navigation menu and services"
+  },
+  {
+    "level": "h2",
+    "text": "Task 3. Review and modify roles and permissions"
+  },
+  {
+    "level": "h3",
+    "text": "View your roles and permissions"
+  },
+  {
+    "level": "h3",
+    "text": "Grant an IAM role"
+  },
+  {
+    "level": "h3",
+    "text": "Test your understanding"
+  },
+  {
+    "level": "h2",
+    "text": "Task 4. Enable APIs and services"
+  },
+  {
+    "level": "h3",
+    "text": "Test your understanding"
+  },
+  {
+    "level": "h2",
+    "text": "Task 5. End your lab"
+  },
+  {
+    "level": "h2",
+    "text": "Congratulations!"
+  },
+  {
+    "level": "h3",
+    "text": "Take your next lab"
+  },
+  {
+    "level": "h3",
+    "text": "Google Cloud training and certification"
+  },
+  {
+    "level": "h4",
+    "text": "Ready for more?\n\nHere's another lab we think you'll like."
+  },
+  {
+    "level": "h3",
+    "text": "Get Started with Agent Studio"
+  },
+  {
+    "level": "h2",
+    "text": "Recertify in 3 simple steps:"
+  },
+  {
+    "level": "h1",
+    "text": "Before you begin"
+  },
+  {
+    "level": "h1",
+    "text": "Use private browsing"
+  },
+  {
+    "level": "h1",
+    "text": "Sign in to the Console"
+  },
+  {
+    "level": "h1",
+    "text": "Score Details"
+  },
+  {
+    "level": "h1",
+    "text": "Use private browsing to run the lab"
+  },
+  {
+    "level": "h1",
+    "text": "How satisfied are you with this lab?*"
+  },
+  {
+    "level": "h1",
+    "text": "Are you sure? You may not be able to restart the lab, and you'll need to start from the beginning if you do."
+  },
+  {
+    "level": "h1",
+    "text": "Verify you're human"
+  }
+]

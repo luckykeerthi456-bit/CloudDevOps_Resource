@@ -1,0 +1,14 @@
+{
+  "description": "In this first hands-on lab you will access the Google Cloud console and use these basic Google Cloud features: Projects, Resources, IAM Users, Roles, Permissions, and APIs.",
+  "keywords": "",
+  "author": "Google Skills for Partners",
+  "canonical": "https://partner.skills.google/focuses/11600",
+  "favicon": "https://cdn.qwiklabs.com/Vag5GK2J6rS6843Qvg8TQJ1kEbAsEmQoF0%2BdLRfcLRE%3D",
+  "language": "en",
+  "open_graph": {
+    "title": "A Tour of Google Cloud Hands-on Labs | Google Skills for Partners",
+    "description": "In this first hands-on lab you will access the Google Cloud console and use these basic Google Cloud features: Projects, Resources, IAM Users, Roles, Permissions, and APIs.",
+    "image": "/super_G_optimized.png",
+    "url": "https://partner.skills.google/focuses/11600"
+  }
+}
