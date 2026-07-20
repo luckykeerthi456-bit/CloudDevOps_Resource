@@ -1,0 +1,142 @@
+[
+    {
+        "level": "h4",
+        "text": "Checkpoints"
+    },
+    {
+        "level": "h1",
+        "text": "Log Analytics on Google Cloud"
+    },
+    {
+        "level": "h2",
+        "text": "GSP1088"
+    },
+    {
+        "level": "h2",
+        "text": "Overview"
+    },
+    {
+        "level": "h3",
+        "text": "What you'll learn"
+    },
+    {
+        "level": "h2",
+        "text": "The demo application used in the lab"
+    },
+    {
+        "level": "h2",
+        "text": "Setup and requirements"
+    },
+    {
+        "level": "h3",
+        "text": "Before you click the Start Lab button"
+    },
+    {
+        "level": "h3",
+        "text": "How to start your lab and sign in to the Google Cloud console"
+    },
+    {
+        "level": "h3",
+        "text": "Activate Cloud Shell"
+    },
+    {
+        "level": "h2",
+        "text": "Task 1. Infrastructure setup"
+    },
+    {
+        "level": "h3",
+        "text": "Verify the GKE cluster"
+    },
+    {
+        "level": "h2",
+        "text": "Task 2. Deploy the application"
+    },
+    {
+        "level": "h3",
+        "text": "Open the application"
+    },
+    {
+        "level": "h2",
+        "text": "Task 3. Manage log buckets"
+    },
+    {
+        "level": "h3",
+        "text": "Upgrade an existing bucket"
+    },
+    {
+        "level": "h3",
+        "text": "Create a new Log bucket"
+    },
+    {
+        "level": "h3",
+        "text": "Write to the new Log bucket"
+    },
+    {
+        "level": "h3",
+        "text": "Read from the new Log bucket"
+    },
+    {
+        "level": "h2",
+        "text": "Task 4. Log analysis"
+    },
+    {
+        "level": "h3",
+        "text": "Example query to find the min, max, and average latency"
+    },
+    {
+        "level": "h3",
+        "text": "Example query to find the number of Product page visits"
+    },
+    {
+        "level": "h3",
+        "text": "Example query to find how many sessions end with a shopping cart checkout"
+    },
+    {
+        "level": "h2",
+        "text": "Congratulations!"
+    },
+    {
+        "level": "h3",
+        "text": "Google Cloud training and certification"
+    },
+    {
+        "level": "h2",
+        "text": "Recertify in 3 simple steps:"
+    },
+    {
+        "level": "h1",
+        "text": "Before you begin"
+    },
+    {
+        "level": "h1",
+        "text": "Use private browsing"
+    },
+    {
+        "level": "h1",
+        "text": "Sign in to the Console"
+    },
+    {
+        "level": "h1",
+        "text": "Score Details"
+    },
+    {
+        "level": "h1",
+        "text": "Use private browsing to run the lab"
+    },
+    {
+        "level": "h1",
+        "text": "How satisfied are you with this lab?*"
+    },
+    {
+        "level": "h1",
+        "text": "Are you sure? You may not be able to restart the lab, and you'll need to start from the beginning if you do."
+    },
+    {
+        "level": "h1",
+        "text": "Verify you're human"
+    },
+    {
+        "level": "h1",
+        "text": "A newer version of this course is available. Your progress will carry over if you choose to upgrade. However, your completion percentage may change if the new version has added or removed any learning activities. Click the preview button to see the course changes before upgrading."
+    }
+]

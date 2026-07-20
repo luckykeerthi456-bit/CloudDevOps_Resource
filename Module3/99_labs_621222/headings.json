@@ -1,0 +1,102 @@
+[
+    {
+        "level": "h4",
+        "text": "Checkpoints"
+    },
+    {
+        "level": "h1",
+        "text": "Alerting in Google Cloud"
+    },
+    {
+        "level": "h2",
+        "text": "Overview"
+    },
+    {
+        "level": "h3",
+        "text": "Objectives"
+    },
+    {
+        "level": "h2",
+        "text": "Setup and requirements"
+    },
+    {
+        "level": "h3",
+        "text": "Activate Google Cloud Shell"
+    },
+    {
+        "level": "h2",
+        "text": "Task 1. Download and test a sample app from GitHub"
+    },
+    {
+        "level": "h2",
+        "text": "Task 2. Deploy an application to App Engine"
+    },
+    {
+        "level": "h2",
+        "text": "Task 3. Examine the App Engine logs"
+    },
+    {
+        "level": "h2",
+        "text": "Task 4. Create an App Engine latency alert"
+    },
+    {
+        "level": "h3",
+        "text": "Check current application latency in Metrics explorer"
+    },
+    {
+        "level": "h3",
+        "text": "Create an alert based on the same metric"
+    },
+    {
+        "level": "h2",
+        "text": "Task 5. (Optional) Creating an Alerting Policy with the CLI"
+    },
+    {
+        "level": "h2",
+        "text": "Review"
+    },
+    {
+        "level": "h2",
+        "text": "End your lab"
+    },
+    {
+        "level": "h2",
+        "text": "Recertify in 3 simple steps:"
+    },
+    {
+        "level": "h1",
+        "text": "Before you begin"
+    },
+    {
+        "level": "h1",
+        "text": "Use private browsing"
+    },
+    {
+        "level": "h1",
+        "text": "Sign in to the Console"
+    },
+    {
+        "level": "h1",
+        "text": "Score Details"
+    },
+    {
+        "level": "h1",
+        "text": "Use private browsing to run the lab"
+    },
+    {
+        "level": "h1",
+        "text": "How satisfied are you with this lab?*"
+    },
+    {
+        "level": "h1",
+        "text": "Are you sure? You may not be able to restart the lab, and you'll need to start from the beginning if you do."
+    },
+    {
+        "level": "h1",
+        "text": "Verify you're human"
+    },
+    {
+        "level": "h1",
+        "text": "A newer version of this course is available. Your progress will carry over if you choose to upgrade. However, your completion percentage may change if the new version has added or removed any learning activities. Click the preview button to see the course changes before upgrading."
+    }
+]

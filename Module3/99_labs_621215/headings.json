@@ -1,0 +1,138 @@
+[
+    {
+        "level": "h4",
+        "text": "Checkpoints"
+    },
+    {
+        "level": "h1",
+        "text": "Monitoring and Dashboarding Multiple Projects"
+    },
+    {
+        "level": "h2",
+        "text": "Overview"
+    },
+    {
+        "level": "h3",
+        "text": "Objectives"
+    },
+    {
+        "level": "h2",
+        "text": "Setup and requirements"
+    },
+    {
+        "level": "h3",
+        "text": "Activate Google Cloud Shell"
+    },
+    {
+        "level": "h2",
+        "text": "Task 1. Configure the resource projects"
+    },
+    {
+        "level": "h3",
+        "text": "Configure two resource projects"
+    },
+    {
+        "level": "h2",
+        "text": "Task 2. Create a metrics scope and link the two worker projects into it"
+    },
+    {
+        "level": "h3",
+        "text": "Configure the monitoring link to the Worker 1 and 2 projects"
+    },
+    {
+        "level": "h2",
+        "text": "Task 3. Create and configure Monitoring groups"
+    },
+    {
+        "level": "h3",
+        "text": "Assign labels to your web servers to make them easier to track"
+    },
+    {
+        "level": "h3",
+        "text": "Create a resource group and place the servers into it"
+    },
+    {
+        "level": "h3",
+        "text": "Create a sub-group just for frontend dev servers"
+    },
+    {
+        "level": "h2",
+        "text": "Task 4. Create and test an uptime check"
+    },
+    {
+        "level": "h3",
+        "text": "Create an uptime check for the Frontend Servers group"
+    },
+    {
+        "level": "h3",
+        "text": "Check out how an uptime check handles failure"
+    },
+    {
+        "level": "h3",
+        "text": "What can Cloud Monitoring, Logging, and Alerting tell us?"
+    },
+    {
+        "level": "h2",
+        "text": "Task 5. Create a custom dashboard"
+    },
+    {
+        "level": "h3",
+        "text": "Create a developer dashboard and add an uptime chart to it"
+    },
+    {
+        "level": "h3",
+        "text": "Add and test a CPU utilization chart to the dashboard"
+    },
+    {
+        "level": "h2",
+        "text": "Review"
+    },
+    {
+        "level": "h3",
+        "text": "Congratulations!"
+    },
+    {
+        "level": "h2",
+        "text": "End your lab"
+    },
+    {
+        "level": "h2",
+        "text": "Recertify in 3 simple steps:"
+    },
+    {
+        "level": "h1",
+        "text": "Before you begin"
+    },
+    {
+        "level": "h1",
+        "text": "Use private browsing"
+    },
+    {
+        "level": "h1",
+        "text": "Sign in to the Console"
+    },
+    {
+        "level": "h1",
+        "text": "Score Details"
+    },
+    {
+        "level": "h1",
+        "text": "Use private browsing to run the lab"
+    },
+    {
+        "level": "h1",
+        "text": "How satisfied are you with this lab?*"
+    },
+    {
+        "level": "h1",
+        "text": "Are you sure? You may not be able to restart the lab, and you'll need to start from the beginning if you do."
+    },
+    {
+        "level": "h1",
+        "text": "Verify you're human"
+    },
+    {
+        "level": "h1",
+        "text": "A newer version of this course is available. Your progress will carry over if you choose to upgrade. However, your completion percentage may change if the new version has added or removed any learning activities. Click the preview button to see the course changes before upgrading."
+    }
+]

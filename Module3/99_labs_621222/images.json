@@ -1,0 +1,97 @@
+[
+    {
+        "src": "https://cdn.qwiklabs.com/lqJbxogu4tSLez1OvjDcIO8rwow6cPLwvrfIdmQLf6U%3D",
+        "alt": "Google Skills for Partners",
+        "local_src": "assets/image_001.png"
+    },
+    {
+        "src": "https://cdn.qwiklabs.com/assets/gamification/streak_icon-21476b37c13f49828a5aaa2d86c4d3378cca4117.svg",
+        "alt": "Current streak count",
+        "local_src": "assets/image_002.svg"
+    },
+    {
+        "src": "https://cdn.qwiklabs.com/9Fk8NYFp3quE9mF%2FilWF6%2FlXY9OUBi3UWtb2Ne4uXNU%3D",
+        "alt": "Navigation menu icon",
+        "local_src": "assets/image_003.png"
+    },
+    {
+        "src": "https://cdn.qwiklabs.com/dxfeoOcn1ObyC0BYyoqqqSi4rO%2FeMdbWPFjoK6C0YYk%3D",
+        "alt": "Google Cloud Project Dashboard",
+        "local_src": "assets/image_004.png"
+    },
+    {
+        "src": "https://cdn.qwiklabs.com/WGBFVIap4CrFWut%2BGdNFzNxeelWYHF1IqYSMFH6Ouq4%3D",
+        "alt": "Highlighted Cloud Shell icon",
+        "local_src": "assets/image_005.png"
+    },
+    {
+        "src": "https://cdn.qwiklabs.com/hmMK0W41Txk%2B20bQyuDP9g60vCdBajIS%2B52iI2f4bYk%3D",
+        "alt": "Project ID highlighted in the Cloud Shell Terminal",
+        "local_src": "assets/image_006.png"
+    },
+    {
+        "src": "https://cdn.qwiklabs.com/nIWXX6n9ehRW1%2BXRcsrl3wovnFjL2YSOrkV4mHTzCZI%3D",
+        "alt": "Web preview option 'Preview on port 8080'.",
+        "local_src": "assets/image_007.png"
+    },
+    {
+        "src": "https://cdn.qwiklabs.com/9VRgE02Dmj3%2BzmhQW3DHgXxMajxYuinIHyOXTv1%2Bt8c%3D",
+        "alt": "App Engine Link",
+        "local_src": "assets/image_008.png"
+    },
+    {
+        "src": "https://cdn.qwiklabs.com/Jtvxo%2FN03G3w3BBj3Cs1pUdiKCQ46gp7zHMRM%2F2GU%2B4%3D",
+        "alt": "Logs Link highlighted in the Diagnose menu.",
+        "local_src": "assets/image_009.png"
+    },
+    {
+        "src": "https://cdn.qwiklabs.com/assets/labs/start_lab-f45aca49782d4033c3ff688160387ac98c66941d.png",
+        "alt": "",
+        "local_src": "assets/image_010.png"
+    },
+    {
+        "src": "https://cdn.qwiklabs.com/assets/labs/open_incognito_window-3ab2004605e88542dd7732361c3fc0e010c7fb6e.png",
+        "alt": "",
+        "local_src": "assets/image_011.png"
+    },
+    {
+        "src": "https://cdn.qwiklabs.com/assets/labs/google_sign_in-f9eb84339d08f7db8c5fdfa7ce7726d3531dae80.png",
+        "alt": "",
+        "local_src": "assets/image_012.png"
+    },
+    {
+        "src": "https://cdn.qwiklabs.com/assets/lab_enablement_notification/disable_lab-47cff1f6bc3610f58767251ff93c2f99cf4f9040.png",
+        "alt": "",
+        "local_src": "assets/image_013.png"
+    },
+    {
+        "src": "https://cdn.qwiklabs.com/assets/lab_enablement_notification/notifcation_subscribed-2b4f9e51439e1a107488ab58a6e13c3c62ef8855.png",
+        "alt": "",
+        "local_src": "assets/image_014.png"
+    },
+    {
+        "src": "https://cdn.qwiklabs.com/assets/quota_management/quota_empty-2ba3ec879dea3091828ec9cfa060947292e2c554.png",
+        "alt": "",
+        "local_src": "assets/image_015.png"
+    },
+    {
+        "src": "https://cdn.qwiklabs.com/assets/quota_management/one_lab_quota-77010e9a83e0a6c7543477868b8b808d70222adb.png",
+        "alt": "",
+        "local_src": "assets/image_016.png"
+    },
+    {
+        "src": "https://cdn.qwiklabs.com/assets/logo_linkedin-a277effb6f261f5d3b8ad0fc692fb0025ff82eaf.png",
+        "alt": "",
+        "local_src": "assets/image_017.png"
+    },
+    {
+        "src": "https://cdn.qwiklabs.com/assets/logo_x-2abcf45e0673a8f244a6b686ea7f0189457d4fe3.png",
+        "alt": "",
+        "local_src": "assets/image_018.png"
+    },
+    {
+        "src": "https://cdn.qwiklabs.com/assets/logo_facebook-5ccdec05e255be16449f837fff607b6d33ae9b87.png",
+        "alt": "",
+        "local_src": "assets/image_019.png"
+    }
+]

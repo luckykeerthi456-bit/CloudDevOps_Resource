@@ -1,0 +1,235 @@
+<!DOCTYPE html>\n<html lang='en'>\n<head>\n<meta charset='UTF-8'>\n<meta name='viewport' content='width=device-width, initial-scale=1.0'>\n<title>Working with Audit Logs - Cloud Audit Logs | Google Skills for Partners</title>\n
+<style>
+body { font-family: Arial, sans-serif; background: #f8fafd; color: #202124; margin: 0; line-height: 1.6; }
+.container { max-width: 980px; margin: 0 auto; background: #fff; padding: 32px; }
+h1 { font-size: 32px; border-bottom: 3px solid #4285f4; padding-bottom: 12px; }
+h2 { margin-top: 40px; border-bottom: 1px solid #dadce0; padding-bottom: 8px; color: #174ea6; }
+.meta, .card { background: #f1f3f4; border-radius: 12px; padding: 16px; margin: 16px 0; }
+.screenshot, img.lesson-image { max-width: 100%; border: 1px solid #dadce0; border-radius: 8px; }
+iframe.youtube { width: 100%; max-width: 900px; height: 506px; border: 0; border-radius: 12px; }
+.transcript-row { border-bottom: 1px solid #eee; padding: 12px 0; }
+.time { font-weight: bold; color: #1a73e8; }
+pre { white-space: pre-wrap; background: #f8f9fa; padding: 16px; border-radius: 8px; }
+a { color: #1a73e8; }
+</style>
+\n</head><body><div class='container'>\n<h1>Working with Audit Logs - Cloud Audit Logs | Google Skills for Partners</h1>\n<h2>Metadata</h2><div class='meta'>\n<p><b>URL:</b> <a href='https://partner.skills.google/paths/20/course_sessions/40490346/labs/621242'>https://partner.skills.google/paths/20/course_sessions/40490346/labs/621242</a></p>\n<p><b>Lesson type:</b> labs</p>\n<p><b>Path ID:</b> 20</p>\n<p><b>Container:</b> course_sessions / 40490346</p>\n<p><b>Lesson ID:</b> 621242</p>\n<p><b>Generated:</b> 2026-07-13 04:07:25</p>\n</div>\n<h2>Full Page Screenshot</h2>\n<p><img class='screenshot' src='screenshot.png' alt='Full page screenshot'></p>\n<h2>YouTube Video</h2>\n<p>No YouTube video found.</p>\n<h2>Transcript</h2>\n<p>No transcript available for this page.</p>\n<h2>Page Text</h2>\n<pre>Partner
+0
+navigate_next
+Professional Cloud DevOps Engineer Certification
+navigate_next
+Logging and Monitoring in Google Cloud
+navigate_next
+Cloud Audit Logs
+This lab may incorporate AI tools to support your learning.
+Overview
+
+In this lab, you investigate Google Cloud Audit Logs. Cloud Audit Logging maintains multiple audit logs for each project, folder, and organization, all of which help answer the question, &quot;Who did what, when, and where?&quot;
+
+Objectives
+
+In this lab, you learn how to:
+
+Enable data access logs on Cloud Storage.
+Generate admin and data access activity.
+View Audit logs.
+Setup and requirements
+
+For each lab, you get a new Google Cloud project and set of resources for a fixed time at no cost.
+
+Click the Start Lab button. If you need to pay for the lab, a pop-up opens for you to select your payment method. On the right is the Lab setup and access panel with the following:
+
+The Open Google Cloud console button
+The temporary credentials (username and password) that you must use for this lab
+Other information, if needed, to step through this lab
+
+Note that the lab timer is located near the top of the page, showing the remaining time.
+
+Click Open Google Cloud console (or right-click and select Open Link in Incognito Window if you are running the Chrome browser).
+
+The lab spins up resources, and then opens another tab that shows the Sign in page.
+
+Tip: Arrange the tabs in separate windows, side-by-side.
+
+Note: If you see the Choose an account dialog, click Use Another Account.
+
+If necessary, copy the Username below and paste it into the Sign in dialog.
+
+You can also find the Username in the Lab setup and access panel.
+
+Click Next.
+
+Copy the Password below and paste it into the Welcome dialog.
+
+You can also find the Password in the Lab setup and access panel.
+
+Click Next.
+
+Important: You must use the credentials the lab provides you. Do not use your Google Cloud account credentials.
+Note: Using your own Google Cloud account for this lab may incur extra charges.
+
+Click through the subsequent pages:
+
+Accept the terms and conditions.
+Do not add recovery options or two-factor authentication (because this is a temporary account).
+Do not sign up for free trials.
+
+After a few moments, the Google Cloud console opens in this tab.
+
+Note: To view a menu with a list of Google Cloud products and services, click the Navigation menu at the top-left, or type the service or product name in the Search field. 
+
+After you complete the initial sign-in steps, the project dashboard appears.
+
+Activate Google Cloud Shell
+
+Google Cloud Shell is a virtual machine that is loaded with development tools. It offers a persistent 5GB home directory and runs on the Google Cloud.
+
+Google Cloud Shell provides command-line access to your Google Cloud resources.
+
+In Cloud console, on the top right toolbar, click the Open Cloud Shell button.
+
+Click Continue.
+
+It takes a few moments to provision and connect to the environment. When you are connected, you are already authenticated, and the project is set to your PROJECT_ID. For example:
+
+gcloud is the command-line tool for Google Cloud. It comes pre-installed on Cloud Shell and supports tab-completion.
+
+You can list the active account name with this command:
+
+Output:
+
+Example output:
+
+You can list the project ID with this command:
+
+Output:
+
+Example output:
+
+Note: Full documentation of gcloud is available in the gcloud CLI overview guide .
+Task 1. Enable data access logs on Cloud Storage
+
+In this task, you enable data access logs on Cloud Storage to track operations that read or write user-provided data, as well as metadata and configuration information.
+
+In the Google Cloud console, in the Navigation menu () click IAM &amp; Admin &gt; Audit Logs.
+
+Scroll or use Filter to locate Google Cloud Storage, then check the box next to it. This should display the Info Panel with options on LOG TYPES.
+
+Data Access audit logs are divided into different categories:
+
+Admin Read: Records operations that read metadata or configuration information. Admin Activity audit logs record writes of metadata and configuration information. They can't be disabled.
+Data Read: Records operations that read user-provided data.
+Data Write: Records operations that write user-provided data.
+Select Admin Read, Data Read and Data Write, and then click Save.
+
+Click Check my progress to verify the objective.Enable data access logs on Cloud Storage
+
+Task 2. Generate some admin and data access activity
+
+In this task, you generate admin and data access activity by creating a storage bucket. You then upload a file, create a network and VM, and then delete the storage bucket.
+
+Open or switch to your Cloud Shell terminal.
+
+Use gcloud storage to create a Cloud Storage bucket with the same name as your project. If prompted, click Authorize:
+
+Make sure the bucket successfully created:
+Create a simple &quot;Hello World&quot; type of text file and upload it to your bucket:
+Verify the file is in the bucket:
+Create a new auto mode network named mynetwork, then create a new virtual machine and place it on the new network:
+
+Click Check my progress to verify the objective.Check the creation of bucket, network and virtual machine instance
+
+Delete the storage bucket:
+Task 3. Viewing audit logs
+
+In this task, you view and explore both Admin Activity and Data Access audit logs in the Logs Explorer, examining the details of logged events such as bucket deletion and data access operations. You then read the Data Access logs using the Cloud SDK.
+
+Admin Activity logs contain log entries for API calls or other administrative actions that modify the configuration or metadata of resources. For example, the logs record when VM instances and App Engine applications are created, or when permissions are changed. To view the logs, you must have the Cloud Identity and Access Management roles Logging/Logs Viewer or Project/Viewer.
+
+Admin Activity logs are always enabled so there is no need to enable them. There is no charge for your Admin Activity audit logs.
+
+In the Google Cloud console, in the Navigation menu () click View all products &gt; Observability &gt; Logging.
+
+In Logs Explorer, enable Show query and delete the contents of Query box.
+
+Click the All log names dropdown and use the filter to locate the activity log under Cloud Audit section and Apply it to the query.
+
+Press the Run query button, and then use the Log fields explorer to filter to GCS Bucket entries.
+
+Locate the log entry for when the Cloud Storage was deleted.
+
+Expand the delete entry, then drill into protoPayload &gt; authenticationInfo field and notice you can see the email address of the user that performed this action.
+
+Feel free to explore other fields in the entry. Also, notice how many of the values can be clicked to add inclusions/exclusions to the query.
+
+Delete the existing query and use All log names to view the data_access logs.
+
+What operations can you see now?
+
+Click Check my progress to verify the objective.Viewing audit logs
+
+Using the Cloud SDK
+
+Log entries can also be read using the Cloud SDK command:
+
+Example:
+
+Switch to or reopen a Cloud Shell terminal.
+
+If we wanted to see those same data access logs using the command line, we could run the following:
+
+Congratulations!
+
+In this exercise, you examined and worked with Google Cloud's Audit Logs. Now you can do a better job figuring out exactly who did what, when. Nice job.
+
+End your lab
+
+When you have completed your lab, click End Lab. Google Skills removes the resources you’ve used and cleans the account for you.
+
+You will be given an opportunity to rate the lab experience. Select the applicable number of stars, type a comment, and then click Submit.
+
+The number of stars indicates the following:
+
+1 star = Very dissatisfied
+2 stars = Dissatisfied
+3 stars = Neutral
+4 stars = Satisfied
+5 stars = Very satisfied
+
+You can close the dialog box if you don't want to provide feedback.
+
+For feedback, suggestions, or corrections, please use the Support tab.
+
+Copyright 2026 Google LLC All rights reserved. Google and the Google logo are trademarks of Google LLC. All other company and product names may be trademarks of the respective companies with which they are associated.
+
+Previous
+Next
+Recertify in 3 simple steps:
+Link your Google Skills and certification account profiles using the same email to get started.
+Instantly see which certifications are eligible for renewal.
+Complete courses and skill badges to renew your certifications automatically.
+
+By clicking &quot;Accept&quot;, I consent to share my name, email, and course completion data with Google Skills' certification partner, CM Connect, to receive continuing education credit for certification renewal.
+
+Before you begin
+Labs create a Google Cloud project and resources for a fixed time
+Labs have a time limit and no pause feature. If you end the lab, you'll have to restart from the beginning.
+On the top left of your screen, click Start lab to begin
+
+This content is not currently available
+
+We will notify you via email when it becomes available
+
+Great!
+
+We will contact you via email if it becomes available
+
+One lab at a time
+
+Confirm to end all existing labs and start this one
+
+Use private browsing to run the lab
+Using an Incognito or private browser window is the best way to run this lab. This prevents any conflicts between your personal account and the Student account, which may cause extra charges incurred to your personal account.
+Additional Comments
+
+Complete this quick step to start your lab.</pre>\n<h2>Images</h2>\n<div class='card'>\n<h3>Image 1</h3>\n<img class='lesson-image' src='https://cdn.qwiklabs.com/lqJbxogu4tSLez1OvjDcIO8rwow6cPLwvrfIdmQLf6U%3D' alt='Google Skills for Partners'>\n<p>Google Skills for Partners</p>\n<p><a href='https://cdn.qwiklabs.com/lqJbxogu4tSLez1OvjDcIO8rwow6cPLwvrfIdmQLf6U%3D' target='_blank'>Open source</a></p>\n</div>\n<div class='card'>\n<h3>Image 2</h3>\n<img class='lesson-image' src='https://cdn.qwiklabs.com/assets/gamification/streak_icon-21476b37c13f49828a5aaa2d86c4d3378cca4117.svg' alt='Current streak count'>\n<p>Current streak count</p>\n<p><a href='https://cdn.qwiklabs.com/assets/gamification/streak_icon-21476b37c13f49828a5aaa2d86c4d3378cca4117.svg' target='_blank'>Open source</a></p>\n</div>\n<div class='card'>\n<h3>Image 3</h3>\n<img class='lesson-image' src='https://cdn.qwiklabs.com/9Fk8NYFp3quE9mF%2FilWF6%2FlXY9OUBi3UWtb2Ne4uXNU%3D' alt='Navigation menu icon'>\n<p>Navigation menu icon</p>\n<p><a href='https://cdn.qwiklabs.com/9Fk8NYFp3quE9mF%2FilWF6%2FlXY9OUBi3UWtb2Ne4uXNU%3D' target='_blank'>Open source</a></p>\n</div>\n<div class='card'>\n<h3>Image 4</h3>\n<img class='lesson-image' src='https://cdn.qwiklabs.com/dxfeoOcn1ObyC0BYyoqqqSi4rO%2FeMdbWPFjoK6C0YYk%3D' alt='The Project Dashboard which inlcudes tiles for Project info, Resources, APIs, Billing, and Error Reporting.'>\n<p>The Project Dashboard which inlcudes tiles for Project info, Resources, APIs, Billing, and Error Reporting.</p>\n<p><a href='https://cdn.qwiklabs.com/dxfeoOcn1ObyC0BYyoqqqSi4rO%2FeMdbWPFjoK6C0YYk%3D' target='_blank'>Open source</a></p>\n</div>\n<div class='card'>\n<h3>Image 5</h3>\n<img class='lesson-image' src='https://cdn.qwiklabs.com/WGBFVIap4CrFWut%2BGdNFzNxeelWYHF1IqYSMFH6Ouq4%3D' alt='Highlighted Cloud Shell icon'>\n<p>Highlighted Cloud Shell icon</p>\n<p><a href='https://cdn.qwiklabs.com/WGBFVIap4CrFWut%2BGdNFzNxeelWYHF1IqYSMFH6Ouq4%3D' target='_blank'>Open source</a></p>\n</div>\n<div class='card'>\n<h3>Image 6</h3>\n<img class='lesson-image' src='https://cdn.qwiklabs.com/hmMK0W41Txk%2B20bQyuDP9g60vCdBajIS%2B52iI2f4bYk%3D' alt='Project ID highlighted in the Cloud Shell Terminal'>\n<p>Project ID highlighted in the Cloud Shell Terminal</p>\n<p><a href='https://cdn.qwiklabs.com/hmMK0W41Txk%2B20bQyuDP9g60vCdBajIS%2B52iI2f4bYk%3D' target='_blank'>Open source</a></p>\n</div>\n<div class='card'>\n<h3>Image 7</h3>\n<img class='lesson-image' src='https://cdn.qwiklabs.com/assets/labs/start_lab-f45aca49782d4033c3ff688160387ac98c66941d.png' alt='Image 7'>\n<p>Image 7</p>\n<p><a href='https://cdn.qwiklabs.com/assets/labs/start_lab-f45aca49782d4033c3ff688160387ac98c66941d.png' target='_blank'>Open source</a></p>\n</div>\n<div class='card'>\n<h3>Image 8</h3>\n<img class='lesson-image' src='https://cdn.qwiklabs.com/assets/labs/open_incognito_window-3ab2004605e88542dd7732361c3fc0e010c7fb6e.png' alt='Image 8'>\n<p>Image 8</p>\n<p><a href='https://cdn.qwiklabs.com/assets/labs/open_incognito_window-3ab2004605e88542dd7732361c3fc0e010c7fb6e.png' target='_blank'>Open source</a></p>\n</div>\n<div class='card'>\n<h3>Image 9</h3>\n<img class='lesson-image' src='https://cdn.qwiklabs.com/assets/labs/google_sign_in-f9eb84339d08f7db8c5fdfa7ce7726d3531dae80.png' alt='Image 9'>\n<p>Image 9</p>\n<p><a href='https://cdn.qwiklabs.com/assets/labs/google_sign_in-f9eb84339d08f7db8c5fdfa7ce7726d3531dae80.png' target='_blank'>Open source</a></p>\n</div>\n<div class='card'>\n<h3>Image 10</h3>\n<img class='lesson-image' src='https://cdn.qwiklabs.com/assets/lab_enablement_notification/disable_lab-47cff1f6bc3610f58767251ff93c2f99cf4f9040.png' alt='Image 10'>\n<p>Image 10</p>\n<p><a href='https://cdn.qwiklabs.com/assets/lab_enablement_notification/disable_lab-47cff1f6bc3610f58767251ff93c2f99cf4f9040.png' target='_blank'>Open source</a></p>\n</div>\n<div class='card'>\n<h3>Image 11</h3>\n<img class='lesson-image' src='https://cdn.qwiklabs.com/assets/lab_enablement_notification/notifcation_subscribed-2b4f9e51439e1a107488ab58a6e13c3c62ef8855.png' alt='Image 11'>\n<p>Image 11</p>\n<p><a href='https://cdn.qwiklabs.com/assets/lab_enablement_notification/notifcation_subscribed-2b4f9e51439e1a107488ab58a6e13c3c62ef8855.png' target='_blank'>Open source</a></p>\n</div>\n<div class='card'>\n<h3>Image 12</h3>\n<img class='lesson-image' src='https://cdn.qwiklabs.com/assets/quota_management/quota_empty-2ba3ec879dea3091828ec9cfa060947292e2c554.png' alt='Image 12'>\n<p>Image 12</p>\n<p><a href='https://cdn.qwiklabs.com/assets/quota_management/quota_empty-2ba3ec879dea3091828ec9cfa060947292e2c554.png' target='_blank'>Open source</a></p>\n</div>\n<div class='card'>\n<h3>Image 13</h3>\n<img class='lesson-image' src='https://cdn.qwiklabs.com/assets/quota_management/one_lab_quota-77010e9a83e0a6c7543477868b8b808d70222adb.png' alt='Image 13'>\n<p>Image 13</p>\n<p><a href='https://cdn.qwiklabs.com/assets/quota_management/one_lab_quota-77010e9a83e0a6c7543477868b8b808d70222adb.png' target='_blank'>Open source</a></p>\n</div>\n<div class='card'>\n<h3>Image 14</h3>\n<img class='lesson-image' src='https://cdn.qwiklabs.com/assets/logo_linkedin-a277effb6f261f5d3b8ad0fc692fb0025ff82eaf.png' alt='Image 14'>\n<p>Image 14</p>\n<p><a href='https://cdn.qwiklabs.com/assets/logo_linkedin-a277effb6f261f5d3b8ad0fc692fb0025ff82eaf.png' target='_blank'>Open source</a></p>\n</div>\n<div class='card'>\n<h3>Image 15</h3>\n<img class='lesson-image' src='https://cdn.qwiklabs.com/assets/logo_x-2abcf45e0673a8f244a6b686ea7f0189457d4fe3.png' alt='Image 15'>\n<p>Image 15</p>\n<p><a href='https://cdn.qwiklabs.com/assets/logo_x-2abcf45e0673a8f244a6b686ea7f0189457d4fe3.png' target='_blank'>Open source</a></p>\n</div>\n<div class='card'>\n<h3>Image 16</h3>\n<img class='lesson-image' src='https://cdn.qwiklabs.com/assets/logo_facebook-5ccdec05e255be16449f837fff607b6d33ae9b87.png' alt='Image 16'>\n<p>Image 16</p>\n<p><a href='https://cdn.qwiklabs.com/assets/logo_facebook-5ccdec05e255be16449f837fff607b6d33ae9b87.png' target='_blank'>Open source</a></p>\n</div>\n<h2>Main Resources</h2>\n<h3>youtube</h3><ul>\n<li><a href='https://www.youtube.com/@googlecloud' target='_blank'>Youtube</a></li>\n</ul>\n<h3>labs</h3><ul>\n<li><a href='https://support.google.com/qwiklabs/contact/Google_Skills_Partner' target='_blank'>Resource</a></li>\n<li><a href='https://partner.skills.google/paths/20/course_sessions/40490346/labs/621215' target='_blank'>Monitoring and Dashboarding Multiple Projects</a></li>\n<li><a href='https://partner.skills.google/paths/20/course_sessions/40490346/labs/621222' target='_blank'>Alerting in Google Cloud</a></li>\n<li><a href='https://partner.skills.google/paths/20/course_sessions/40490346/labs/621224' target='_blank'>Service Monitoring</a></li>\n<li><a href='https://partner.skills.google/paths/20/course_sessions/40490346/labs/621234' target='_blank'>Log Analytics on Google Cloud</a></li>\n<li><a href='https://partner.skills.google/paths/20/course_sessions/40490346/labs/621242' target='_blank'>Cloud Audit Logs</a></li>\n</ul>\n<h3>external_links</h3><ul>\n<li><a href='https://partner.skills.google/' target='_blank'>Resource</a></li>\n<li><a href='https://partner.skills.google/paths/20' target='_blank'>Professional Cloud DevOps Engineer Certification</a></li>\n<li><a href='https://partner.skills.google/paths/20/course_templates/99' target='_blank'>Logging and Monitoring in Google Cloud</a></li>\n<li><a href='https://cloud.google.com/sdk/gcloud' target='_blank'>gcloud CLI overview guide</a></li>\n<li><a href='https://partner.skills.google/' target='_blank'>Dashboard</a></li>\n<li><a href='https://partner.skills.google/catalog' target='_blank'>Catalog</a></li>\n<li><a href='https://partner.skills.google/paths' target='_blank'>Paths</a></li>\n<li><a href='https://partner.skills.google/subscriptions' target='_blank'>Subscriptions</a></li>\n<li><a href='https://partner.skills.google/profile/stay_on_track' target='_blank'>Activities</a></li>\n<li><a href='https://partner.skills.google/profile/badges' target='_blank'>Achievements</a></li>\n<li><a href='https://partner.skills.google/catalog_lab/3422' target='_blank'>https://partner.skills.google/catalog_lab/3422</a></li>\n<li><a href='https://x.com/intent/tweet?text=Learn%20cloud%20tech%20through%20hands-on%20training%20on%20%23GoogleSkills%21&amp;url=https%3A%2F%2Fpartner.skills.google%2Fcatalog_lab%2F3422%3Futm_medium%3Dsocial%26utm_source%3Dx%26utm_campaign%3Dql-social-share&amp;hashtags=' target='_blank'>Resource</a></li>\n<li><a href='https://partner.skills.google/profile/activity' target='_blank'>Resource</a></li>\n<li><a href='https://partner.skills.google/my_account/profile' target='_blank'>Resource</a></li>\n<li><a href='https://partner.skills.google/my_account/programs' target='_blank'>Programs</a></li>\n<li><a href='https://partner.skills.google/paths/20/course_templates/99' target='_blank'>Overview</a></li>\n<li><a href='https://partner.skills.google/paths/20/course_sessions/40490346/html_bundles/621199' target='_blank'>Introduction to Google Cloud Observability</a></li>\n<li><a href='https://partner.skills.google/paths/20/course_sessions/40490346/html_bundles/621200' target='_blank'>Monitoring</a></li>\n<li><a href='https://partner.skills.google/paths/20/course_sessions/40490346/html_bundles/621201' target='_blank'>Need for Google Cloud observability</a></li>\n<li><a href='https://partner.skills.google/paths/20/course_sessions/40490346/html_bundles/621202' target='_blank'>Google Cloud Observability</a></li>\n<li><a href='https://partner.skills.google/paths/20/course_sessions/40490346/html_bundles/621203' target='_blank'>Cloud Monitoring</a></li>\n<li><a href='https://partner.skills.google/paths/20/course_sessions/40490346/html_bundles/621204' target='_blank'>Cloud Logging</a></li>\n<li><a href='https://partner.skills.google/paths/20/course_sessions/40490346/html_bundles/621205' target='_blank'>Error Reporting</a></li>\n<li><a href='https://partner.skills.google/paths/20/course_sessions/40490346/html_bundles/621206' target='_blank'>Application Performance Management Tools</a></li>\n<li><a href='https://partner.skills.google/paths/20/course_sessions/40490346/html_bundles/621207' target='_blank'>Module Summary</a></li>\n<li><a href='https://partner.skills.google/paths/20/course_sessions/40490346/quizzes/621208' target='_blank'>Quiz - Introduction to Google Cloud Observability</a></li>\n<li><a href='https://partner.skills.google/paths/20/course_sessions/40490346/html_bundles/621209' target='_blank'>Monitoring Overview</a></li>\n<li><a href='https://partner.skills.google/paths/20/course_sessions/40490346/html_bundles/621210' target='_blank'>Cloud Monitoring achitecture patterns</a></li>\n<li><a href='https://partner.skills.google/paths/20/course_sessions/40490346/html_bundles/621211' target='_blank'>Monitoring multiple projects</a></li>\n<li><a href='https://partner.skills.google/paths/20/course_sessions/40490346/html_bundles/621212' target='_blank'>Data model and dashboards</a></li>\n<li><a href='https://partner.skills.google/paths/20/course_sessions/40490346/html_bundles/621213' target='_blank'>Query metrics</a></li>\n<li><a href='https://partner.skills.google/paths/20/course_sessions/40490346/html_bundles/621214' target='_blank'>Uptime checks</a></li>\n<li><a href='https://partner.skills.google/paths/20/course_sessions/40490346/html_bundles/621216' target='_blank'>Module summary</a></li>\n<li><a href='https://partner.skills.google/paths/20/course_sessions/40490346/quizzes/621217' target='_blank'>Quiz - Monitoring critical systems</a></li>\n<li><a href='https://partner.skills.google/paths/20/course_sessions/40490346/html_bundles/621218' target='_blank'>Module Overview</a></li>\n<li><a href='https://partner.skills.google/paths/20/course_sessions/40490346/html_bundles/621219' target='_blank'>SLI, SLO, and SLA</a></li>\n<li><a href='https://partner.skills.google/paths/20/course_sessions/40490346/html_bundles/621220' target='_blank'>Developing an alerting strategy</a></li>\n<li><a href='https://partner.skills.google/paths/20/course_sessions/40490346/html_bundles/621221' target='_blank'>Creating alerts</a></li>\n<li><a href='https://partner.skills.google/paths/20/course_sessions/40490346/html_bundles/621223' target='_blank'>Service Monitoring</a></li>\n<li><a href='https://partner.skills.google/paths/20/course_sessions/40490346/html_bundles/621225' target='_blank'>Module summary</a></li>\n<li><a href='https://partner.skills.google/paths/20/course_sessions/40490346/quizzes/621226' target='_blank'>Quiz - Alerting Policies</a></li>\n<li><a href='https://partner.skills.google/paths/20/course_sessions/40490346/html_bundles/621227' target='_blank'>Module Overview</a></li>\n<li><a href='https://partner.skills.google/paths/20/course_sessions/40490346/html_bundles/621228' target='_blank'>Cloud Logging overview and architecture</a></li>\n<li><a href='https://partner.skills.google/paths/20/course_sessions/40490346/html_bundles/621229' target='_blank'>Log types and collection</a></li>\n<li><a href='https://partner.skills.google/paths/20/course_sessions/40490346/html_bundles/621230' target='_blank'>Storing, routing and exporting the logs</a></li>\n<li><a href='https://partner.skills.google/paths/20/course_sessions/40490346/html_bundles/621231' target='_blank'>Query and view logs</a></li>\n<li><a href='https://partner.skills.google/paths/20/course_sessions/40490346/html_bundles/621232' target='_blank'>Using log-based metrics</a></li>\n<li><a href='https://partner.skills.google/paths/20/course_sessions/40490346/html_bundles/621233' target='_blank'>Log analytics</a></li>\n<li><a href='https://partner.skills.google/paths/20/course_sessions/40490346/html_bundles/621235' target='_blank'>Module Summary</a></li>\n<li><a href='https://partner.skills.google/paths/20/course_sessions/40490346/quizzes/621236' target='_blank'>Quiz - Advanced Logging and Analysis</a></li>\n<li><a href='https://partner.skills.google/paths/20/course_sessions/40490346/html_bundles/621237' target='_blank'>Module Overview</a></li>\n<li><a href='https://partner.skills.google/paths/20/course_sessions/40490346/html_bundles/621238' target='_blank'>Cloud Audit Logs</a></li>\n<li><a href='https://partner.skills.google/paths/20/course_sessions/40490346/html_bundles/621239' target='_blank'>Data Access audit logs</a></li>\n<li><a href='https://partner.skills.google/paths/20/course_sessions/40490346/html_bundles/621240' target='_blank'>Audit logs entry format</a></li>\n<li><a href='https://partner.skills.google/paths/20/course_sessions/40490346/html_bundles/621241' target='_blank'>Best practices</a></li>\n<li><a href='https://partner.skills.google/paths/20/course_sessions/40490346/html_bundles/621243' target='_blank'>Module Summary</a></li>\n<li><a href='https://partner.skills.google/paths/20/course_sessions/40490346/quizzes/621244' target='_blank'>Quiz - Working with Audit Logs</a></li>\n<li><a href='https://partner.skills.google/paths/20/course_sessions/40490346/html_bundles/621245' target='_blank'>Course 1 Summary</a></li>\n<li><a href='https://partner.skills.google/paths/20/course_sessions/40490346/documents/621246' target='_blank'>Course Resources</a></li>\n<li><a href='https://partner.skills.google/paths/20/course_templates/99/badge' target='_blank'>Claim credential</a></li>\n<li><a href='https://partner.skills.google/paths/20/course_templates/99/course_surveys/0' target='_blank'>Course Survey
+      Recommended</a></li>\n<li><a href='https://partner.skills.google/paths/20/course_sessions/40490346/html_bundles/621241' target='_blank'>Resource</a></li>\n<li><a href='https://partner.skills.google/paths/20/course_sessions/40490346/html_bundles/621243' target='_blank'>Resource</a></li>\n<li><a href='https://partner.skills.google/focuses/827494165/set_up_lab_forward_url?course_template=99&amp;parent=course_session' target='_blank'>Resource</a></li>\n<li><a href='https://partner.skills.google/paths/20/course_templates/99/preview' target='_blank'>Resource</a></li>\n</ul>\n<h2>Headings</h2>\n<ul>\n<li><b>H4</b>: Checkpoints</li>\n<li><b>H1</b>: Cloud Audit Logs</li>\n<li><b>H2</b>: Overview</li>\n<li><b>H3</b>: Objectives</li>\n<li><b>H2</b>: Setup and requirements</li>\n<li><b>H3</b>: Activate Google Cloud Shell</li>\n<li><b>H2</b>: Task 1. Enable data access logs on Cloud Storage</li>\n<li><b>H2</b>: Task 2. Generate some admin and data access activity</li>\n<li><b>H2</b>: Task 3. Viewing audit logs</li>\n<li><b>H3</b>: Using the Cloud SDK</li>\n<li><b>H3</b>: Congratulations!</li>\n<li><b>H2</b>: End your lab</li>\n<li><b>H2</b>: Recertify in 3 simple steps:</li>\n<li><b>H1</b>: Before you begin</li>\n<li><b>H1</b>: Use private browsing</li>\n<li><b>H1</b>: Sign in to the Console</li>\n<li><b>H1</b>: Score Details</li>\n<li><b>H1</b>: Use private browsing to run the lab</li>\n<li><b>H1</b>: How satisfied are you with this lab?*</li>\n<li><b>H1</b>: Are you sure? You may not be able to restart the lab, and you'll need to start from the beginning if you do.</li>\n<li><b>H1</b>: Verify you're human</li>\n<li><b>H1</b>: A newer version of this course is available. Your progress will carry over if you choose to upgrade. However, your completion percentage may change if the new version has added or removed any learning activities. Click the preview button to see the course changes before upgrading.</li>\n</ul>\n</div></body></html>

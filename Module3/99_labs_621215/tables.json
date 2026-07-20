@@ -1,0 +1,11 @@
+[
+    "Field\tValue\tAdditional Information\nName\tworker-1-server\tName for the VM instance\nRegion\t\tFor more information about regions, see the Compute Engine guide, Regions and Zones.\nZone\t\tNote: Remember the zone that you selected to use later. For more information about zones, see the Compute Engine guide, Regions and Zones.\nSeries\tE2\tName of the series\nMachine Type\t2 vCPU\tThis is an (e2-medium), 2-CPU, 4GB RAM instance. Several machine types are available, ranging from micro instance types to 32-core/208GB RAM instance types. For more information, see the Compute Engine guide, About machine families. Note: A new project has a default resource quota, which may limit the number of CPU cores. You can request more when you work on projects outside this lab.\nBoot Disk\tNew 10 GB balanced persistent disk OS Image: Debian GNU/Linux 12 (bookworm)\tSeveral images are available, including Debian, Ubuntu, CoreOS, and premium images such as Red Hat Enterprise Linux and Windows Server. For more information, see Operating System documentation.\nFirewall\tAllow HTTP traffic\tSelect this option in order to access a web server that you install later. Note: This automatically creates a firewall rule to allow HTTP traffic on port 80.",
+    "Setting\tValue\nType\tTag\nTag\tcomponent\nOperator\tEquals\nValue\tfrontend",
+    "Setting\tValue\nName\tFrontend Dev\nCriteria 1\t\nType\tTag\nTag\tcomponent\nOperator\tEquals\nValue\tfrontend",
+    "Setting\tValue\nCriteria 2\t\nType\tTag\nTag\tstage\nOperator\tEquals\nvalue\tdev",
+    "Setting\tValue\nProtocol\tHTTP\nResource Type\tInstance\nApplies To\tGroup\nGroup\tFrontend Servers\nPath\t/\nCheck Frequency\t1 minute",
+    "Setting\tValue\nMetric labels\tchecked_resource_id\nValue\tSelect from dropdown",
+    "Setting\tValue\nWidget Title\tDev Server Uptime\nSelect a metric\tVM Instance > Uptime_check > check_passed",
+    "Setting\tValue\nResource labels\tinstance_id\nValue\tSelect from dropdown",
+    "Setting\tValue\nMetric labels\tinstance_name\nValue\tworker-1-server"
+]

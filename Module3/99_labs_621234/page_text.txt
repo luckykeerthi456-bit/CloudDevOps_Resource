@@ -1,0 +1,315 @@
+Partner
+0
+navigate_next
+Professional Cloud DevOps Engineer Certification
+navigate_next
+Logging and Monitoring in Google Cloud
+navigate_next
+Log Analytics on Google Cloud
+This lab may incorporate AI tools to support your learning.
+GSP1088
+Overview
+
+Cloud Logging is a fully managed service that allows you to store, search, analyze, monitor, and alert on logging data and events from Google Cloud. In this lab you learn about the features and tools provided by Cloud Logging to gain insight into your applications.
+
+What you'll learn
+
+In this lab you learn how to:
+
+Use Cloud Logging effectively and get insight about applications running on Google Kubernetes Engine (GKE).
+Effectively build and run queries using log analytics.
+The demo application used in the lab
+
+In this lab, you work through a scenario based on this microservices demo app deployed to a GKE cluster. This demo app has many microservices and dependencies embedded in it.
+
+Setup and requirements
+Before you click the Start Lab button
+
+Read these instructions. Labs are timed and you cannot pause them. The timer, which starts when you click Start Lab, shows how long Google Cloud resources are made available to you.
+
+This hands-on lab lets you do the lab activities in a real cloud environment, not in a simulation or demo environment. It does so by giving you new, temporary credentials you use to sign in and access Google Cloud for the duration of the lab.
+
+To complete this lab, you need:
+
+Access to a standard internet browser (Chrome browser recommended).
+Note: Use an Incognito (recommended) or private browser window to run this lab. This prevents conflicts between your personal account and the student account, which may cause extra charges incurred to your personal account.
+Time to complete the lab—remember, once you start, you cannot pause a lab.
+Note: Use only the student account for this lab. If you use a different Google Cloud account, you may incur charges to that account.
+How to start your lab and sign in to the Google Cloud console
+
+Click the Start Lab button. If you need to pay for the lab, a dialog opens for you to select your payment method. On the right is the Lab setup and access panel with the following:
+
+The Open Google Cloud console button
+The temporary credentials (username and password) that you must use for this lab
+Other information, if needed, to step through this lab
+
+Note that the lab timer is located near the top of the page, showing the remaining time.
+
+Click Open Google Cloud console (or right-click and select Open Link in Incognito Window if you are running the Chrome browser).
+
+The lab spins up resources, and then opens another tab that shows the Sign in page.
+
+Tip: Arrange the tabs in separate windows, side-by-side.
+
+Note: If you see the Choose an account dialog, click Use Another Account.
+
+If necessary, copy the Username below and paste it into the Sign in dialog.
+
+You can also find the Username in the Lab setup and access panel.
+
+Click Next.
+
+Copy the Password below and paste it into the Welcome dialog.
+
+You can also find the Password in the Lab setup and access panel.
+
+Click Next.
+
+Important: You must use the credentials the lab provides you. Do not use your Google Cloud account credentials.
+Note: Using your own Google Cloud account for this lab may incur extra charges.
+
+Click through the subsequent pages:
+
+Accept the terms and conditions.
+Do not add recovery options or two-factor authentication (because this is a temporary account).
+Do not sign up for free trials.
+
+After a few moments, the Google Cloud console opens in this tab.
+
+Note: To access Google Cloud products and services, click the Navigation menu or type the service or product name in the Search field. 
+Activate Cloud Shell
+
+Cloud Shell is a virtual machine that is loaded with development tools. It offers a persistent 5GB home directory and runs on the Google Cloud. Cloud Shell provides command-line access to your Google Cloud resources.
+
+Click Activate Cloud Shell  at the top of the Google Cloud console.
+
+Click through the following windows:
+
+Continue through the Cloud Shell information window.
+Authorize Cloud Shell to use your credentials to make Google Cloud API calls.
+
+When you are connected, you are already authenticated, and the project is set to your Project_ID, . The output contains a line that declares the Project_ID for this session:
+
+gcloud is the command-line tool for Google Cloud. It comes pre-installed on Cloud Shell and supports tab-completion.
+
+(Optional) You can list the active account name with this command:
+Click Authorize.
+
+Output:
+
+(Optional) You can list the project ID with this command:
+
+Output:
+
+Note: For full documentation of gcloud, in Google Cloud, refer to the gcloud CLI overview guide.
+Task 1. Infrastructure setup
+Verify the GKE cluster
+
+Connect to a GKE cluster and validate that it's been created correctly.
+
+In Cloud Shell, set the zone in gcloud:
+Use the following command to see the cluster's status:
+
+You should see a similar status:
+
+The cluster status should say RUNNING. If it's still PROVISIONING, wait a moment and run the command above again. Repeat until the status is RUNNING.
+
+You can also check the progress in the Google Cloud console. In the Navigation menu () click Kubernetes Engine > Clusters.
+
+Once your cluster has RUNNING status, get the cluster credentials:
+
+Your output should look like this:
+
+Verify that the nodes have been created:
+
+Your output should look like this:
+
+Task 2. Deploy the application
+
+Next, you deploy a microservices application called Online Boutique to your cluster to create an actual workload you can monitor.
+
+Run the following to clone the repo:
+Navigate to the microservices-demo directory:
+Install the app using kubectl:
+Confirm that everything is running correctly:
+
+The output should look similar to the output below. Re-run the command until all pods are reporting a Running status before moving to the next step.
+
+Run the following commands to get the external IP of the application.
+
+An IP address is returned only after the service has been deployed. You may need to repeat the commands until there's an external IP address assigned.
+
+When the IP address is assigned, your output should be similar to this:
+
+Finally, confirm that the app is up and running:
+
+Your confirmation looks like this:
+
+After the application is deployed, you can also view the status in the console.
+
+On the Kubernetes Engine page, in the left pane, click Workloads to see that all the pods are OK.
+
+In the left pane, click Gateways, Services & Ingress, then click the Services tab and check that all services show an OK status.
+
+Open the application
+
+On Gateways, Services & Ingress > Services , click the Endpoint IP of the service frontend-external.
+
+It should open a demo web page similar to the following:
+
+Note: You may need to click a "Continue to site" button if prompted.
+
+Click Check my progress to verify the objective.Deploy application
+
+Task 3. Manage log buckets
+
+There are two ways to enable Log Analytics. One way is to upgrade an existing bucket. The other is to create a new log bucket with Log Analytics enabled.
+
+Upgrade an existing bucket
+
+You can use the following steps to upgrade an existing log bucket.
+
+In the console, in the Navigation menu (), click View all products > Observability > Logging. Click Favorite for easier access later in the lab.
+
+Click Logs storage.
+
+Click Upgrade for an existing bucket, Default bucket.
+
+Click Upgrade in the confirmation dialog.
+
+Wait for the status to change to Upgraded.
+
+Click Open and select the view _AllLogs.
+
+The Log Analytics page opens.
+
+Create a new Log bucket
+
+You can use the following steps to create a new log bucket.
+
+In the left pane, click Logs storage and then click Create log bucket at the top of the Logs Storage window.
+
+Provide a name, such as day2ops-log to the bucket.
+
+Check both Upgrade to use Log Analytics and Create a new BigQuery dataset that links to this bucket.
+
+Type in a BigQuery dataset name day2ops_log.
+
+For the Region field, select the Global option.
+
+Selecting Create a linked dataset in BigQuery creates a dataset for you in BigQuery if it does not exist. This lets you run queries in BigQuery.
+
+Click Create bucket to create the log bucket.
+
+Click Check my progress to verify the objective.Create a Log bucket
+
+Write to the new Log bucket
+
+There are a couple ways to create a log sink to route log entries to the new log bucket:
+
+From the Logs router directly.
+From Logs explorer. You can run log queries to select and filter the logs you are interested in when you create a sink. The advantage to this approach is the log query is automatically copied to the sink configuration as the filter.
+
+Click Logs explorer in the left pane.
+
+In the top-right, enable Show query and run the following query in the query field:
+
+Click Actions > Create sink.
+
+For sink name type day2ops-sink.
+
+Click Next.
+
+Select Logging bucket in the sink service dropdown list.
+
+Select the new log bucket you just created.
+
+Your new log bucket should be similar to this:
+
+Click Next.
+
+You should see the resource type query already in the filter.
+
+Click Create sink.
+
+Wait about a minute and your sink should be created.
+
+Click Check my progress to verify the objective.Create the log sink
+
+Read from the new Log bucket
+
+In the left pane, navigate to Logs explorer. Notice in the Fields list, in the Resource Type section, that there are many different resource types for the logs.
+
+To view the logs in the new log bucket, at the top left of the Logs explorer window, click Project logs > Log view > the new log bucket (that you just created).
+
+Click Apply.
+
+You see that Kubernetes Containers is now the only resource type and there are fewer log entries. That's because only filtered logs are sent to the bucket.
+
+Task 4. Log analysis
+On the left pane, click Log Analytics to open the Log Analytics page.
+
+If your query field is empty or you forget which table to use, click the Run query button to get the sample query back.
+
+You can run your own queries in the query field. This task provides some examples.
+
+Important: The log view name in the FROM clause is different for the log buckets. Be sure you use the correct view name. You can use the previous step to verify.
+Example query to find the min, max, and average latency
+
+From the right pane, select <> SQL. Click the Clear button to remove any existing content from the query editor. Paste the query into the editor, then select Run query to retrieve the most recent errors from the containers.
+
+Use the query to find the min, max, and average latencies in a timeframe for the frontend service:
+
+Example query to find the number of Product page visits
+
+Use the query to find how many times users visit a certain product page in the past hour:
+
+Example query to find how many sessions end with a shopping cart checkout
+
+Use the query to find how many sessions end up with checkout (POST call to the /cart/checkout service):
+
+Congratulations!
+
+You now have experience using Cloud Logging to get insight about applications running on GKE, and you built and ran queries using log analytics.
+
+Google Cloud training and certification
+
+...helps you make the most of Google Cloud technologies. Our classes include technical skills and best practices to help you get up to speed quickly and continue your learning journey. We offer fundamental to advanced level training, with on-demand, live, and virtual options to suit your busy schedule. Certifications help you validate and prove your skill and expertise in Google Cloud technologies.
+
+Manual Last Updated June 19, 2026
+
+Lab Last Tested June 19, 2026
+
+Copyright 2026 Google LLC. All rights reserved. Google and the Google logo are trademarks of Google LLC. All other company and product names may be trademarks of the respective companies with which they are associated.
+
+Previous
+Next
+Recertify in 3 simple steps:
+Link your Google Skills and certification account profiles using the same email to get started.
+Instantly see which certifications are eligible for renewal.
+Complete courses and skill badges to renew your certifications automatically.
+
+By clicking "Accept", I consent to share my name, email, and course completion data with Google Skills' certification partner, CM Connect, to receive continuing education credit for certification renewal.
+
+Before you begin
+Labs create a Google Cloud project and resources for a fixed time
+Labs have a time limit and no pause feature. If you end the lab, you'll have to restart from the beginning.
+On the top left of your screen, click Start lab to begin
+
+This content is not currently available
+
+We will notify you via email when it becomes available
+
+Great!
+
+We will contact you via email if it becomes available
+
+One lab at a time
+
+Confirm to end all existing labs and start this one
+
+Use private browsing to run the lab
+Using an Incognito or private browser window is the best way to run this lab. This prevents any conflicts between your personal account and the Student account, which may cause extra charges incurred to your personal account.
+Additional Comments
+
+Complete this quick step to start your lab.
